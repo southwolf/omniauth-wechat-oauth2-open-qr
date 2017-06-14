@@ -2,16 +2,15 @@ require "omniauth-oauth2"
 
 module OmniAuth
   module Strategies
-    class Wechat < OmniAuth::Strategies::OAuth2
+    class WechatOpenQr < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
-      option :name, "wechat"
+      option :name, "wechat_open_qr"
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
       option :client_options, {
         site:          "https://api.weixin.qq.com",
-        # authorize_url: "https://open.weixin.qq.com/connect/qrconnect#wechat_redirect",
-        authorize_url: "https://open.weixin.qq.com/connect/oauth2/authorize#wechat_redirect",
+        authorize_url: "https://open.weixin.qq.com/connect/qrconnect#wechat_redirect",
         token_url:     "/sns/oauth2/access_token",
         token_method:  :get
       }
